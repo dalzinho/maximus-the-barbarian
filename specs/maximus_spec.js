@@ -66,13 +66,8 @@ describe('Maximus', function(){
     maximus.drink('mediocre beer');
     maximus.drink('mediocre beer');
     maximus.drink('mediocre beer');
-    maximus.drink('mediocre beer');
-    maximus.drink('mediocre beer');
-    maximus.drink('mediocre beer');
-    maximus.drink('mediocre beer');
-    maximus.drink('mediocre beer');
 
-    assert.equal(100, maximus.anger);
+
     assert.equal(false, maximus.alive);
   });
 
@@ -84,5 +79,11 @@ describe('Maximus', function(){
   it('is less than kind about non-favourite beer varieties', function(){
     assert.equal("What is this pish?", maximus.drink('crap beer'));
   });
+
+  it('will not die after a rampage if fave beer drunk first', function(){
+    maximus.drink("Great Beer");
+    maximus.rampage();
+    assert.equal(true, maximus.checkHealth());
+  })
 
 })
