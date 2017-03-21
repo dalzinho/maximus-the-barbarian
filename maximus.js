@@ -6,14 +6,18 @@ var maximus = {
   faveBeer: "Great Beer",
   alive: true,
 
-  drink: function(beer){  
-    if (beer === this.faveBeer){
-      this.health += 10;
-    } else {
-      this.anger += 10;
-      if(this.anger >= 100){
-        this.rampage();
+  drink: function(beer){
+    if(this.alive === true){
+      if (beer === this.faveBeer){
+        this.health += 10;
+      } else {
+        this.anger += 10;
+        if(this.anger >= 100){
+          this.rampage();
+        }
       }
+    } else {
+      return this.name + " is too dead for more beer :(";
     }
   },
 
@@ -27,7 +31,7 @@ var maximus = {
   rampage: function(){
     this.health -= 50;
     this.checkHealth();
-    return this.name + " smashes the place up!";
+    return this.name + " smashes the place up with his " + this.weapon;
 
   },
 

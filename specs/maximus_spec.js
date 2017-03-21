@@ -40,7 +40,7 @@ describe('Maximus', function(){
   });
 
   it('rampage smashes the place up', function(){
-    assert.equal(maximus.name + " smashes the place up!", maximus.rampage());
+    assert.equal(maximus.name + " smashes the place up with his Mighty Weapon", maximus.rampage());
   });
 
   it('is alive at start', function(){
@@ -71,9 +71,14 @@ describe('Maximus', function(){
     maximus.drink('mediocre beer');
     maximus.drink('mediocre beer');
     maximus.drink('mediocre beer');
-    assert.equal(50, maximus.health);
+
     assert.equal(100, maximus.anger);
     assert.equal(false, maximus.alive);
   });
+
+  it('cannot drink beer if dead', function(){
+    maximus.rampage();
+    assert.equal("Maximus the Barbarian is too dead for more beer :(", maximus.drink());
+  })
 
 })
