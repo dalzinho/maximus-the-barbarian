@@ -15,6 +15,7 @@ var maximus = {
         if(this.anger >= 100){
           this.rampage();
         }
+        return "What is this pish?"
       }
     } else {
       return this.name + " is too dead for more beer :(";
@@ -27,17 +28,12 @@ var maximus = {
     }
   },
 
-
   rampage: function(){
     this.health -= 50;
     this.checkHealth();
     return this.name + " smashes the place up with his " + this.weapon;
 
   },
-
-  
-
-
 }
 
 module.exports = maximus;
