@@ -79,6 +79,10 @@ describe('Maximus', function(){
   it('cannot drink beer if dead', function(){
     maximus.rampage();
     assert.equal("Maximus the Barbarian is too dead for more beer :(", maximus.drink());
-  })
+  });
+
+  it('is less than kind about non-favourite beer varieties', function(){
+    assert.equal("What is this pish?", maximus.drink('crap beer'));
+  });
 
 })
