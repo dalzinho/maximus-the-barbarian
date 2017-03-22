@@ -40,7 +40,7 @@ describe('Maximus', function(){
   });
 
   it('rampage smashes the place up', function(){
-    assert.equal(maximus.name + " smashes the place up with his Mighty Weapon", maximus.rampage());
+    assert.equal("Maximus the Barbarian smashes the place up with his Mighty Weapon", maximus.rampage());
   });
 
   it('is alive at start', function(){
