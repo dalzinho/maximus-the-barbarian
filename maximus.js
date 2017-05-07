@@ -31,9 +31,13 @@ var maximus = {
   },
 
   rampage: function(){
+    if(this.checkHealth()){
     this.health -= 50;
     this.checkHealth();
     return this.name + " smashes the place up with his " + this.weapon;
+  } else {
+    return this.name + " is deid. Nae rampage.";
+  }
 
   },
 

@@ -84,6 +84,11 @@ describe('Maximus', function(){
     maximus.drink("Great Beer");
     maximus.rampage();
     assert.equal(true, maximus.checkHealth());
+  });
+
+  it('cannae rampage while deid', function(){
+    maximus.rampage();
+    assert.equal('Maximus the Barbarian is deid. Nae rampage.', maximus.rampage());
   })
 
 })
